@@ -25,7 +25,8 @@ body {
     max-width: 100%;
     height: auto;
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    /* Portrait-oriented ratio so the full chest/suit fits without cropping */
+    aspect-ratio: 3 / 4;
   }
 
   .hero-content {
@@ -64,6 +65,11 @@ body {
   .topnav-inner {
     height: 64px;
   }
+
+  /* Safe zone below the footer so the floating chat button doesn't overlap content */
+  footer {
+    padding-bottom: 96px;
+  }
 }
 
 /* ----- Phones ------------------------------------------------------------ */
@@ -92,9 +98,9 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* Smaller footer padding for phones */
+  /* Smaller footer padding for phones, but keep bottom safe zone for chat FAB */
   footer {
-    padding: 48px 16px 24px;
+    padding: 48px 16px 96px;
   }
 
   .topnav-inner {
