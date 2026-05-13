@@ -1,0 +1,371 @@
+/* ============================================================================
+   sections.css — Styles for individual content sections
+   ========================================================================== */
+
+/* ----- About / bio section ----------------------------------------------- */
+.bio {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.bio-content {
+  max-width: 820px;
+}
+.bio-content p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+.bio-content p:last-child { margin-bottom: 0; }
+.bio-content strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ----- At a glance grid -------------------------------------------------- */
+.at-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  border-top: 2px solid var(--ink);
+  padding-top: 40px;
+}
+.glance-col h3 {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+.glance-col ul { list-style: none; }
+.glance-col li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.glance-col li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--pwc-orange);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.glance-col li:last-child { border-bottom: none; }
+.glance-col .sub {
+  color: var(--body);
+  font-size: 13px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ----- Experience timeline ----------------------------------------------- */
+.experience {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.timeline {
+  border-left: 2px solid var(--pwc-orange);
+  padding-left: 36px;
+  max-width: 820px;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -44px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--pwc-orange);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--pwc-orange);
+}
+.timeline-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pwc-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.timeline-role {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.timeline-company {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.timeline-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+/* ----- Projects grid ----------------------------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.project-card {
+  background: white;
+  padding: 44px 40px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+/*
+ * Reveal-on-scroll: only hide cards initially if JS has loaded successfully.
+ * `body.js-ready` is added by js/main.js as soon as it executes. If JS fails
+ * (e.g. opened via file://, blocked extensions), this class is never added
+ * and cards stay visible — graceful degradation.
+ */
+body.js-ready .project-card {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+body.js-ready .project-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+/* Cascade timing for entrance */
+.project-card:nth-child(1) { transition-delay: 0.05s; }
+.project-card:nth-child(2) { transition-delay: 0.15s; }
+.project-card:nth-child(3) { transition-delay: 0.25s; }
+.project-card:nth-child(4) { transition-delay: 0.35s; }
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--pwc-orange), var(--pwc-yellow));
+  transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--pwc-orange) 6%, transparent), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.project-card.is-visible:hover {
+  transform: translateY(-8px);
+  border-color: transparent;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.16),
+              0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+.project-card.is-visible:hover::before { height: 100%; }
+.project-card:hover::after { opacity: 1; }
+
+.project-num {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pwc-orange);
+  margin-bottom: 18px;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              letter-spacing 0.35s ease;
+  transform-origin: left center;
+}
+.project-card:hover .project-num {
+  transform: translateX(6px);
+  letter-spacing: 0.12em;
+}
+.project-title {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: var(--ink);
+  transition: color 0.3s ease;
+}
+.project-card:hover .project-title { color: var(--pwc-orange); }
+.project-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--body);
+  margin-bottom: 24px;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.project-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--line-soft);
+  padding: 5px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.project-card:hover .project-tag {
+  background: var(--peach);
+  color: var(--pwc-orange-dark);
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pwc-orange);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+.project-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: var(--pwc-orange);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .project-link::before { width: 100%; }
+.project-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .project-link svg { transform: translateX(8px); }
+
+/* Row holding primary + secondary action links */
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+/* Secondary (e.g. GitHub) link: muted color, smaller, with hover lift */
+.project-link.secondary {
+  color: var(--ink-soft);
+}
+.project-link.secondary::before {
+  background: var(--ink-soft);
+}
+.project-link.secondary:hover {
+  color: var(--pwc-orange);
+}
+.project-link.secondary svg {
+  width: 16px;
+  height: 16px;
+}
+.project-card:hover .project-link.secondary svg {
+  transform: none;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  body.js-ready .project-card {
+    opacity: 1;
+    transform: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .project-card:hover { transform: none; }
+  .project-card:nth-child(n) { transition-delay: 0s; }
+}
+
+/* ----- Tech stack -------------------------------------------------------- */
+.tech-stack {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  border-top: 2px solid var(--ink);
+  padding-top: 40px;
+}
+.tech-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pwc-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+.tech-col ul { list-style: none; }
+.tech-col li {
+  font-size: 15px;
+  color: var(--ink-soft);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.tech-col li:last-child { border-bottom: none; }
+
+/* ----- Contact CTA section ----------------------------------------------- */
+.contact-cta {
+  text-align: center;
+  padding: 100px 32px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.contact-cta h2 {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
+}
+.contact-cta p {
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  line-height: 1.6;
+}

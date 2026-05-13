@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soumyanil Ain — Software Engineer and MS Computer Science candidate at UNC Charlotte. Full-stack engineer with three years of production experience at PwC." />
+  <title>Soumyanil Ain | Software Engineer</title>
+
+  <link rel="icon" type="image/png" href="assets/profile.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets (load in dependency order: base → layout → components → widgets → responsive) -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/widgets.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+  </div>
+
+  <!-- PwC-style 4-color accent strip -->
+  <div class="accent-bar"></div>
+
+  <!-- Top navigation -->
+  <nav class="topnav" aria-label="Primary">
+    <div class="topnav-inner">
+      <a href="#" class="brand" aria-label="Soumyanil Ain — home">
+        <div class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="brand-text">Soumyanil Ain</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#focus">Areas of focus</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="theme-picker">
+        <button class="theme-toggle" id="themeToggle" aria-label="Change theme color" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+          </svg>
+        </button>
+        <div class="theme-options" id="themeOptions" role="menu">
+          <button class="theme-swatch" data-theme="orange" aria-label="Orange theme" title="Orange"></button>
+          <button class="theme-swatch" data-theme="blue" aria-label="Blue theme" title="Blue"></button>
+          <button class="theme-swatch" data-theme="forest" aria-label="Forest theme" title="Forest"></button>
+          <button class="theme-swatch" data-theme="burgundy" aria-label="Burgundy theme" title="Burgundy"></button>
+          <button class="theme-swatch" data-theme="charcoal" aria-label="Charcoal theme" title="Charcoal"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-photo">
+      <img src="assets/profile.jpg" alt="Soumyanil Ain" />
+    </div>
+    <div class="hero-content">
+      <h1>Soumyanil Ain</h1>
+      <div class="hero-role">
+        <span class="role-line">Software Engineer &amp; MS Computer Science Candidate</span>
+        <span class="role-line">Charlotte, North Carolina, UNC Charlotte</span>
+      </div>
+      <p class="hero-summary">
+        Having spent three years as a Software Development Engineer at PwC Acceleration Centers building
+        production systems in Java, Spring Boot, and React, Soumyanil is now pursuing an MS in Computer
+        Science at UNC Charlotte with a 4.0 GPA, focused on real-time machine learning and full-stack
+        cloud applications.
+      </p>
+
+      <a href="mailto:soumyanilain@gmail.com" class="hero-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Contact</span>
+      </a>
+
+      <a href="https://maps.google.com/?q=Charlotte+North+Carolina" target="_blank" rel="noopener" class="hero-link address">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Charlotte, North Carolina, United States</span>
+      </a>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/soumyanilain" class="hero-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6V14c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4v6.5H8.6V7.6h3.4V9c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v7.7zM4.6 6.1c-1.2 0-2.1-1-2.1-2.1S3.4 1.9 4.6 1.9c1.2 0 2.1 1 2.1 2.1S5.8 6.1 4.6 6.1zM6.4 20.4H2.8V7.6h3.6v12.8zM22.2 0H1.8C.8 0 0 .7 0 1.7v20.7C0 23.3.8 24 1.8 24h20.4c1 0 1.8-.7 1.8-1.7V1.7C24 .7 23.2 0 22.2 0z"/></svg>
+        </a>
+        <a href="https://github.com/soumyanilain" class="hero-social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section class="bio" id="about">
+      <div class="section">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-title">Building software that handles real users, real data, and real edge cases.</h2>
+        <div class="bio-content">
+          <p>
+            Soumyanil is a software engineer and graduate student whose work spans enterprise full-stack
+            development, real-time analytics, and applied machine learning. Over three years at <strong>PwC
+            Acceleration Centers</strong>, he shipped production features in Java, Spring Boot, and React for
+            large client engagements, working across distributed systems, cloud infrastructure on AWS and
+            Azure, and data pipelines that move millions of records.
+          </p>
+          <p>
+            He is currently completing his <strong>MS in Computer Science at UNC Charlotte</strong> with a 4.0
+            GPA, graduating May 2027. His coursework and projects center on the intersection of systems
+            engineering and machine learning — building tools that are not just functionally correct but fast
+            enough, observable enough, and reliable enough to run in production.
+          </p>
+          <p>
+            Recent work includes <strong>MotionLCM</strong>, a deployed real-time text-to-motion generation app
+            based on the ECCV 2024 paper on latent consistency distillation, and <strong>MatchTARA</strong>, a
+            full-stack hiring platform built with React, Node.js, Express, PostgreSQL, and Prisma. He holds
+            AWS Certified Cloud Practitioner and Microsoft Certified Azure Fundamentals credentials, and
+            publishes data work on Tableau Public alongside his GitHub portfolio.
+          </p>
+          <p>
+            Outside of code, he is currently applying for Summer 2026 internships in software engineering,
+            data science, cloud, and analytics roles. He is open to relocation across the United States.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE -->
+    <section class="section" id="focus">
+      <div class="section-eyebrow">At a glance</div>
+      <h2 class="section-title">Areas of focus, education, and credentials.</h2>
+      <div class="at-glance-grid">
+        <div class="glance-col">
+          <h3>Areas of focus</h3>
+          <ul>
+            <li>Full-stack development (Java, Spring Boot, React)</li>
+            <li>Distributed systems and microservices</li>
+            <li>Cloud architecture on AWS and Azure</li>
+            <li>Real-time data and streaming analytics</li>
+            <li>Applied machine learning and computer vision</li>
+            <li>Data engineering and visualization</li>
+          </ul>
+        </div>
+        <div class="glance-col">
+          <h3>Education</h3>
+          <ul>
+            <li>
+              MS, Computer Science
+              <span class="sub">University of North Carolina at Charlotte · GPA 4.0 · May 2027</span>
+            </li>
+            <li>
+              B.Tech, Electronics and Communication Engineering
+              <span class="sub">SRM Institute of Science and Technology · 2018 – 2022</span>
+            </li>
+          </ul>
+        </div>
+        <div class="glance-col">
+          <h3>Certifications</h3>
+          <ul>
+            <li>
+              AWS Certified Cloud Practitioner
+              <span class="sub">Amazon Web Services</span>
+            </li>
+            <li>
+              Microsoft Certified: Azure Fundamentals
+              <span class="sub">Microsoft</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="section">
+        <div class="section-eyebrow">Experience</div>
+        <h2 class="section-title">Three years building production systems for enterprise clients.</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2022 — Aug 2025</div>
+            <h3 class="timeline-role">Software Development Engineer</h3>
+            <div class="timeline-company">PwC Acceleration Centers · Full-time</div>
+            <p class="timeline-desc">
+              Owned end-to-end development of enterprise features across Java and Spring Boot back-ends and
+              React front-ends. Built and maintained REST APIs, integrated with cloud services on AWS and
+              Azure, and contributed to data pipelines processing millions of records. Worked across
+              distributed teams using Agile and code-review practices, with regular exposure to large-scale
+              client engagements.
+            </p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Summer 2022</div>
+            <h3 class="timeline-role">Software Engineering Intern</h3>
+            <div class="timeline-company">PwC Acceleration Centers</div>
+            <p class="timeline-desc">
+              Joined as an intern and converted to a full-time return offer. Shipped initial production
+              features alongside senior engineers, learning the firm's stack and code-review culture.
+            </p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Aug 2025 — Present</div>
+            <h3 class="timeline-role">Graduate Student</h3>
+            <div class="timeline-company">University of North Carolina at Charlotte</div>
+            <p class="timeline-desc">
+              MS Computer Science with a 4.0 GPA. Coursework spans machine learning, software engineering,
+              and computer networks. Active project work on real-time motion generation, full-stack platform
+              design, and data visualization at scale.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-eyebrow">Selected work</div>
+      <h2 class="section-title">Projects across machine learning, full-stack, and data visualization.</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-num">— 01</div>
+          <h3 class="project-title">MotionLCM</h3>
+          <p class="project-desc">
+            Real-time text-to-motion generation system based on the ECCV 2024 paper on latent consistency
+            distillation. Deployed as a public Hugging Face Space with a Gradio interface, custom example
+            prompts, an architecture diagram, and benchmarking against the base diffusion model.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">PyTorch</span>
+            <span class="project-tag">Gradio</span>
+            <span class="project-tag">HF Spaces</span>
+            <span class="project-tag">Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://huggingface.co/spaces/soumyanilain/MotionLCM" class="project-link" target="_blank" rel="noopener">
+              View live demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://github.com/soumyanilain/MotionLCM" class="project-link secondary" target="_blank" rel="noopener" aria-label="MotionLCM GitHub repo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-num">— 02</div>
+          <h3 class="project-title">MatchTARA</h3>
+          <p class="project-desc">
+            Full-stack TA and RA hiring platform for university departments. Includes job-board browsing,
+            position creation for faculty, application submission for students, and authentication. Built as
+            a monorepo with React on the front end and a Node.js/Express API backed by PostgreSQL and Prisma.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Prisma</span>
+          </div>
+          <div class="project-links">
+            <a href="https://matchtara.netlify.app/" class="project-link" target="_blank" rel="noopener">
+              View live demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://github.com/soumyanilain/MatchTARA" class="project-link secondary" target="_blank" rel="noopener" aria-label="MatchTARA GitHub repo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-num">— 03</div>
+          <h3 class="project-title">Netflix Viewing Behavior</h3>
+          <p class="project-desc">
+            Exploratory data analysis dashboard built on Observable Framework over a roughly 50,000-record
+            Netflix dataset. Published interactive visualizations of genre trends, watch-time patterns, and
+            country-level viewing differences.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Observable</span>
+            <span class="project-tag">D3.js</span>
+            <span class="project-tag">Data Viz</span>
+          </div>
+          <div class="project-links">
+            <a href="https://observable-prep-work.observablehq.cloud/netflix-viewing-behavior-analysis" class="project-link" target="_blank" rel="noopener">
+              View dashboard
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://github.com/soumyanilain/netflix-viewing-behavior-analysis" class="project-link secondary" target="_blank" rel="noopener" aria-label="Netflix Viewing Behavior GitHub repo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-num">— 04</div>
+          <h3 class="project-title">Tableau Portfolio</h3>
+          <p class="project-desc">
+            Public Tableau workbook collection covering business analytics dashboards, KPI reporting, and
+            exploratory studies. Used as a working portfolio for data-focused internship applications and
+            course deliverables.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Tableau</span>
+            <span class="project-tag">Analytics</span>
+            <span class="project-tag">Dashboards</span>
+          </div>
+          <div class="project-links">
+            <a href="https://public.tableau.com/app/profile/soumyanil.ain/vizzes" class="project-link" target="_blank" rel="noopener">
+              View on Tableau Public
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://github.com/soumyanilain/tableau-portfolio" class="project-link secondary" target="_blank" rel="noopener" aria-label="Tableau Portfolio GitHub repo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </article>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="tech-stack">
+      <div class="section">
+        <div class="section-eyebrow">Toolkit</div>
+        <h2 class="section-title">A working toolkit for building, shipping, and operating software.</h2>
+        <div class="tech-grid">
+          <div class="tech-col">
+            <h4>Languages</h4>
+            <ul>
+              <li>Java</li>
+              <li>JavaScript / TypeScript</li>
+              <li>Python</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          <div class="tech-col">
+            <h4>Frameworks</h4>
+            <ul>
+              <li>Spring Boot</li>
+              <li>React · Angular</li>
+              <li>Node.js · Express</li>
+              <li>FastAPI · Streamlit</li>
+            </ul>
+          </div>
+          <div class="tech-col">
+            <h4>Cloud &amp; Data</h4>
+            <ul>
+              <li>AWS · Azure</li>
+              <li>Docker · Kubernetes</li>
+              <li>PostgreSQL · MongoDB</li>
+              <li>Kafka · WebSockets</li>
+            </ul>
+          </div>
+          <div class="tech-col">
+            <h4>ML &amp; Visualization</h4>
+            <ul>
+              <li>PyTorch · scikit-learn</li>
+              <li>Hugging Face · Gradio</li>
+              <li>D3.js · Tableau</li>
+              <li>Observable · Plotly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-cta" id="contact">
+      <div class="section-eyebrow">Get in touch</div>
+      <h2>Open to Summer 2026 internships in software, data, and cloud.</h2>
+      <p>
+        Currently looking for internship opportunities in software engineering, data science, cloud
+        engineering, and analytics. I'm based in Charlotte, NC and open to relocating anywhere in the
+        United States.
+      </p>
+      <div class="cta-actions">
+        <a href="mailto:soumyanilain@gmail.com" class="cta-btn">Email me</a>
+        <a href="https://github.com/soumyanilain" class="cta-icon" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/soumyanilain" class="cta-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6V14c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4v6.5H8.6V7.6h3.4V9c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v7.7zM4.6 6.1c-1.2 0-2.1-1-2.1-2.1S3.4 1.9 4.6 1.9c1.2 0 2.1 1 2.1 2.1S5.8 6.1 4.6 6.1zM6.4 20.4H2.8V7.6h3.6v12.8zM22.2 0H1.8C.8 0 0 .7 0 1.7v20.7C0 23.3.8 24 1.8 24h20.4c1 0 1.8-.7 1.8-1.7V1.7C24 .7 23.2 0 22.2 0z"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Soumyanil Ain</div>
+          <p class="footer-tagline">
+            Software engineer and graduate student building full-stack systems and applied
+            machine-learning tools. Charlotte, NC.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#focus">Areas of focus</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Portfolio</h5>
+          <ul>
+            <li><a href="https://github.com/soumyanilain" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://huggingface.co/soumyanilain" target="_blank" rel="noopener">Hugging Face</a></li>
+            <li><a href="https://public.tableau.com/app/profile/soumyanil.ain/vizzes" target="_blank" rel="noopener">Tableau Public</a></li>
+            <li><a href="https://www.linkedin.com/in/soumyanilain" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:soumyanilain@gmail.com">soumyanilain@gmail.com</a></li>
+            <li><a href="tel:+19804062716">+1 (980) 406-2716</a></li>
+            <li>Charlotte, NC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Soumyanil Ain. All rights reserved.</div>
+        <div class="footer-social">
+          <a href="https://github.com/soumyanilain" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/soumyanilain" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6V14c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4v6.5H8.6V7.6h3.4V9c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.6v7.7zM4.6 6.1c-1.2 0-2.1-1-2.1-2.1S3.4 1.9 4.6 1.9c1.2 0 2.1 1 2.1 2.1S5.8 6.1 4.6 6.1zM6.4 20.4H2.8V7.6h3.6v12.8zM22.2 0H1.8C.8 0 0 .7 0 1.7v20.7C0 23.3.8 24 1.8 24h20.4c1 0 1.8-.7 1.8-1.7V1.7C24 .7 23.2 0 22.2 0z"/></svg>
+          </a>
+          <a href="mailto:soumyanilain@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Chat Widget -->
+  <button class="chat-fab" id="chatFab" aria-label="Open chat with AI assistant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span>Ask AI</span>
+    <span class="pulse" aria-hidden="true"></span>
+  </button>
+
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-labelledby="chatTitle" aria-hidden="true">
+    <div class="chat-header">
+      <div class="chat-avatar"><img src="assets/profile.jpg" alt="" /></div>
+      <div class="chat-header-info">
+        <div class="chat-header-title" id="chatTitle">Ask about Soumyanil</div>
+        <div class="chat-header-sub">
+          <span class="chat-status-dot" aria-hidden="true"></span>
+          <span>AI assistant · powered by Claude</span>
+        </div>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">
+        Hi! I'm an AI assistant trained on Soumyanil's portfolio. Ask me about his experience, projects, skills, or background — or pick a quick question below.
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="chat-suggestion" data-q="What's Soumyanil's experience at PwC?">Experience at PwC</button>
+        <button class="chat-suggestion" data-q="Tell me about the MotionLCM project">MotionLCM project</button>
+        <button class="chat-suggestion" data-q="What's his tech stack?">Tech stack</button>
+        <button class="chat-suggestion" data-q="What internships is he looking for?">Internship goals</button>
+      </div>
+    </div>
+
+    <form class="chat-input-row" id="chatForm">
+      <textarea class="chat-input" id="chatInput" placeholder="Ask anything about Soumyanil..." rows="1" maxlength="1000" aria-label="Type your message"></textarea>
+      <button type="submit" class="chat-send" id="chatSend" aria-label="Send message" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- Back-to-top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Scripts (load as ES modules so each file can import what it needs) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

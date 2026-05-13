@@ -1,0 +1,102 @@
+/* ============================================================================
+   base.css — Design tokens, theme variants, resets, base typography
+   ========================================================================== */
+
+:root {
+  /* Brand palette (default: Forest green theme) */
+  --pwc-orange: #1B5E3F;
+  --pwc-orange-dark: #0F3D27;
+  --pwc-yellow: #FFD166;
+  --pwc-rose: #94C973;
+  --pwc-burgundy: #2C3E2D;
+
+  /* Neutrals */
+  --ink: #2D2D2D;
+  --ink-soft: #4D4D4D;
+  --body: #6E6E6E;
+  --line: #E5E5E5;
+  --line-soft: #F2F2F2;
+
+  /* Surfaces */
+  --bg: #FFFFFF;
+  --bg-soft: #FAFAFA;
+  --peach: #E2EBD5;
+  --footer: #2D2D2D;
+  --footer-text: #B5B5B5;
+}
+
+/* ----- Theme variants (override accent palette) -------------------------- */
+[data-theme="orange"] {
+  --pwc-orange: #D04A02;
+  --pwc-orange-dark: #A93B00;
+  --pwc-yellow: #FFB600;
+  --pwc-rose: #E27588;
+  --pwc-burgundy: #602320;
+  --peach: #FBE6D7;
+}
+[data-theme="blue"] {
+  --pwc-orange: #0F4C81;
+  --pwc-orange-dark: #093561;
+  --pwc-yellow: #4FACFE;
+  --pwc-rose: #6EE7B7;
+  --pwc-burgundy: #1E3A5F;
+  --peach: #DCE7F2;
+}
+[data-theme="forest"] {
+  --pwc-orange: #1B5E3F;
+  --pwc-orange-dark: #0F3D27;
+  --pwc-yellow: #FFD166;
+  --pwc-rose: #94C973;
+  --pwc-burgundy: #2C3E2D;
+  --peach: #E2EBD5;
+}
+[data-theme="burgundy"] {
+  --pwc-orange: #8B2635;
+  --pwc-orange-dark: #5F1820;
+  --pwc-yellow: #E8A87C;
+  --pwc-rose: #C38D9E;
+  --pwc-burgundy: #3A1015;
+  --peach: #F5DDDC;
+}
+[data-theme="charcoal"] {
+  --pwc-orange: #2D2D2D;
+  --pwc-orange-dark: #111111;
+  --pwc-yellow: #B0B0B0;
+  --pwc-rose: #777777;
+  --pwc-burgundy: #1A1A1A;
+  --peach: #EFEFEF;
+}
+
+/* ----- Reset ------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Safety: prevent unbounded SVG sizing if a class is missing */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+a svg,
+button svg {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- Base typography --------------------------------------------------- */
+body {
+  font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  font-weight: 400;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

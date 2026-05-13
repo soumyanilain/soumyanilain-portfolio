@@ -1,0 +1,207 @@
+/* ============================================================================
+   components.css — Reusable UI components: theme picker, buttons, indicators
+   ========================================================================== */
+
+/* ----- Theme picker ------------------------------------------------------ */
+.theme-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: all 0.2s ease;
+  position: relative;
+}
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pwc-orange);
+  transition: background 0.25s ease;
+}
+.theme-toggle:hover {
+  border-color: var(--pwc-orange);
+  color: var(--pwc-orange);
+}
+.theme-toggle svg { width: 18px; height: 18px; }
+
+.theme-options {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: white;
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  z-index: 110;
+}
+.theme-options.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.theme-options::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  right: 14px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  transform: rotate(45deg);
+}
+.theme-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 0 0 1px var(--line);
+  padding: 0;
+  position: relative;
+}
+.theme-swatch:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 1px var(--ink-soft);
+}
+.theme-swatch.active {
+  box-shadow: 0 0 0 2px var(--ink);
+}
+.theme-swatch.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+.theme-swatch[data-theme="orange"]   { background: #D04A02; }
+.theme-swatch[data-theme="blue"]     { background: #0F4C81; }
+.theme-swatch[data-theme="forest"]   { background: #1B5E3F; }
+.theme-swatch[data-theme="burgundy"] { background: #8B2635; }
+.theme-swatch[data-theme="charcoal"] { background: #2D2D2D; }
+
+/* ----- Scroll progress bar (top of viewport) ----------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  pointer-events: none;
+}
+.scroll-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pwc-orange), var(--pwc-yellow));
+  transition: width 0.08s linear;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Back-to-top button ------------------------------------------------ */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--pwc-orange);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease,
+              background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--pwc-orange-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+.back-to-top:hover.visible {
+  transform: translateY(-3px);
+}
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ----- Contact CTA buttons ----------------------------------------------- */
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cta-btn {
+  background: var(--pwc-orange);
+  color: white;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.cta-btn:hover { background: var(--pwc-orange-dark); }
+.cta-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cta-icon:hover {
+  background: var(--pwc-orange);
+  color: white;
+  border-color: var(--pwc-orange);
+}
+.cta-icon svg {
+  width: 18px;
+  height: 18px;
+}
