@@ -2,32 +2,109 @@
    responsive.css — All breakpoints, loaded last so it can override everything
    ========================================================================== */
 
+/* ----- Global overflow protection ---------------------------------------- */
+/* Prevent any rogue element from causing horizontal scroll on mobile. */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* ----- Tablet & small laptop --------------------------------------------- */
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
     padding: 32px 24px 48px;
+    /* Override base align-items so stacked items don't stretch awkwardly */
+    align-items: start;
   }
-  .hero-photo { aspect-ratio: 4 / 3; }
-  .hero-content { padding: 40px 32px; }
 
-  .section { padding: 60px 24px; }
+  .hero-photo {
+    /* Override the fixed 440px width from base styles so it can shrink to fit */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
 
-  .at-glance-grid { grid-template-columns: 1fr; gap: 32px; }
-  .projects-grid  { grid-template-columns: 1fr; }
-  .tech-grid      { grid-template-columns: repeat(2, 1fr); }
-  .footer-top     { grid-template-columns: 1fr 1fr; }
+  .hero-content {
+    padding: 40px 32px;
+  }
 
-  .nav-links { display: none; }
-  .theme-picker { margin-left: auto; }
-  .topnav-inner { height: 64px; }
+  .section {
+    padding: 60px 24px;
+  }
+
+  .at-glance-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .theme-picker {
+    margin-left: auto;
+  }
+
+  .topnav-inner {
+    height: 64px;
+  }
 }
 
 /* ----- Phones ------------------------------------------------------------ */
 @media (max-width: 540px) {
-  .tech-grid  { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; }
-  .hero h1    { font-size: 38px !important; }
+  .hero {
+    padding: 24px 16px 32px;
+  }
+
+  .hero-content {
+    padding: 32px 24px;
+  }
+
+  .hero h1 {
+    font-size: 38px !important;
+  }
+
+  .section {
+    padding: 48px 16px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  /* Smaller footer padding for phones */
+  footer {
+    padding: 48px 16px 24px;
+  }
+
+  .topnav-inner {
+    padding: 0 16px;
+  }
+
+  /* Project cards with less padding so they breathe on narrow screens */
+  .project-card {
+    padding: 32px 24px;
+  }
 
   /* Back-to-top button shrinks slightly */
   .back-to-top {
