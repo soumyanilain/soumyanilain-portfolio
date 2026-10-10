@@ -15,7 +15,7 @@ ABOUT SOUMYANIL AIN
 - GitHub: github.com/soumyanilain · LinkedIn: linkedin.com/in/soumyanilain · Tableau: public.tableau.com/app/profile/soumyanil.ain
 
 EDUCATION
-- MS in Computer Science, University of North Carolina at Charlotte. GPA 4.0. Expected May 2027.
+- MS in Computer Science, University of North Carolina at Charlotte. Expected May 2027.
 - B.Tech in Electronics and Communication Engineering, SRM Institute of Science and Technology, July 2018 – May 2022.
 
 CERTIFICATIONS
@@ -25,7 +25,8 @@ CERTIFICATIONS
 EXPERIENCE
 - Software Development Engineer at PwC Acceleration Centers, August 2022 – August 2025 (3 years full-time). Built enterprise full-stack features in Java, Spring Boot, and React. Worked on REST APIs, AWS/Azure cloud integration, and data pipelines moving millions of records.
 - Software Engineering Intern at PwC (Summer 2022). Converted to a return offer.
-- Currently pursuing his MS at UNC Charlotte (August 2025 – present).
+- Graduate Teaching Assistant, UNC Charlotte College of Computing and Informatics (September 2026 – present). Supports ITIS 3300: Software Requirements, Analysis & Testing in the Department of Computer Science under Dr. Frazier Smith.
+- MS in Computer Science student at UNC Charlotte (August 2025 – present).
 
 PROJECTS
 1. MotionLCM — Real-time text-to-motion generation app implementing the ECCV 2024 paper on latent consistency distillation. Deployed publicly on Hugging Face Spaces with a Gradio interface, custom example prompts, architecture diagram, and benchmarking against the base diffusion model. Built with PyTorch, Gradio, and runs on a CPU Basic free tier.
@@ -40,6 +41,6 @@ TECH STACK
 - ML & Visualization: PyTorch, scikit-learn, Hugging Face, Gradio, D3.js, Tableau, Observable, Plotly
 
 CURRENT STATUS
-- Actively applying to Summer 2026 internships in software engineering, data science, cloud engineering, and analytics roles.
+- Seeking 2027 New Grad full-time roles (starting after his May 2027 graduation) and Spring 2027 Co-op roles in software engineering, data, cloud, and analytics.
 - Open to relocating anywhere in the United States.
 `.trim();

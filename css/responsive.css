@@ -72,6 +72,26 @@ body {
   }
 }
 
+/* ----- Timeline: single column on narrow screens ------------------------- */
+@media (max-width: 720px) {
+  .timeline-item {
+    --rail: 8px;
+    --dot-y: 3px;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+    padding-left: 36px;
+    padding-bottom: 40px;
+  }
+  .timeline-item > *,
+  .timeline-item > .timeline-date {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: left;
+    padding-top: 0;
+  }
+  .timeline-date { margin-bottom: 6px; }
+}
+
 /* ----- Phones ------------------------------------------------------------ */
 @media (max-width: 540px) {
   .hero {

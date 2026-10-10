@@ -15,8 +15,11 @@ import { KNOWLEDGE } from './knowledge.js';
 // ----- Local rule-based fallback ------------------------------------------
 function localFallback(question) {
   const q = question.toLowerCase();
+  if (/intern|co-?op|new grad|2027|looking for|opportunit|seeking|open to|available/.test(q)) {
+    return "He's seeking **2027 New Grad** full-time roles (starting after his May 2027 graduation) and **Spring 2027 Co-op** roles in software engineering, data, cloud, and analytics. He's based in Charlotte, NC and open to relocating anywhere in the US. Reach out at soumyanilain@gmail.com to discuss opportunities.";
+  }
   if (/pwc|experience|work|job/.test(q)) {
-    return "Soumyanil worked at **PwC Acceleration Centers** for three years (Aug 2022 – Aug 2025) as a Software Development Engineer. He built enterprise full-stack features in Java, Spring Boot, and React, integrated with AWS and Azure, and contributed to data pipelines processing millions of records. He started as an intern in summer 2022 and converted to a return offer.";
+    return "Soumyanil worked at **PwC Acceleration Centers** for three years (Aug 2022 – Aug 2025) as a Software Development Engineer. He built enterprise full-stack features in Java, Spring Boot, and React, integrated with AWS and Azure, and contributed to data pipelines processing millions of records. He started as an intern in summer 2022 and converted to a return offer. Since September 2026 he's also been a Graduate Teaching Assistant at UNC Charlotte for ITIS 3300: Software Requirements, Analysis & Testing.";
   }
   if (/motionlcm|motion/.test(q)) {
     return "**MotionLCM** is a real-time text-to-motion generation app he built based on the ECCV 2024 paper on latent consistency distillation. It's deployed publicly on Hugging Face Spaces with a Gradio interface, custom example prompts, an architecture diagram, and benchmarking against the base diffusion model. Try it at huggingface.co/spaces/soumyanilain/MotionLCM";
@@ -24,14 +27,14 @@ function localFallback(question) {
   if (/matchtara|hiring|ta\/ra|platform/.test(q)) {
     return "**MatchTARA** is a full-stack TA/RA hiring platform for university departments. It has a job board, position creation for faculty, student application submission, and authentication. Stack: React + Node.js/Express + PostgreSQL + Prisma in a monorepo. Repo at github.com/soumyanilain/MatchTARA";
   }
+  if (/teach|\bta\b|assistant|itis|3300/.test(q)) {
+    return "Since September 2026 he's been a **Graduate Teaching Assistant** in UNC Charlotte's Department of Computer Science, supporting ITIS 3300: Software Requirements, Analysis & Testing under Dr. Frazier Smith.";
+  }
   if (/tech|stack|skill|language|framework/.test(q)) {
     return "His core stack:\n\n**Languages:** Java, JavaScript/TypeScript, Python, SQL\n**Frameworks:** Spring Boot, React, Angular, Node.js/Express, FastAPI\n**Cloud & Data:** AWS, Azure, Docker, Kubernetes, PostgreSQL, MongoDB, Kafka\n**ML & Visualization:** PyTorch, Hugging Face, Gradio, D3.js, Tableau";
   }
-  if (/intern|2026|looking|hiring|opportunit/.test(q)) {
-    return "He's actively applying to **Summer 2026 internships** in software engineering, data science, cloud engineering, and analytics roles. He's based in Charlotte, NC and open to relocating anywhere in the US. Reach out at soumyanilain@gmail.com to discuss opportunities.";
-  }
   if (/education|study|university|college|gpa|degree|school/.test(q)) {
-    return "He's pursuing an **MS in Computer Science at UNC Charlotte** with a 4.0 GPA, graduating May 2027. His undergrad was a B.Tech in Electronics and Communication Engineering from SRM Institute of Science and Technology (2018–2022). He also holds AWS Cloud Practitioner and Azure Fundamentals certifications.";
+    return "He's pursuing an **MS in Computer Science at UNC Charlotte**, graduating May 2027. His undergrad was a B.Tech in Electronics and Communication Engineering from SRM Institute of Science and Technology (2018–2022). He also holds AWS Cloud Practitioner and Azure Fundamentals certifications.";
   }
   if (/contact|email|phone|reach/.test(q)) {
     return "Reach Soumyanil at **soumyanilain@gmail.com** or +1 (980) 406-2716. He's also on LinkedIn (linkedin.com/in/soumyanilain) and GitHub (github.com/soumyanilain).";
@@ -42,7 +45,7 @@ function localFallback(question) {
   if (/^(hi|hello|hey)/.test(q)) {
     return "Hi there! Ask me anything about Soumyanil's experience, projects, tech stack, or what he's looking for next.";
   }
-  return "I have info on Soumyanil's experience at PwC, his projects (MotionLCM, MatchTARA, Netflix Viewing Behavior, Tableau Portfolio), tech stack, education at UNC Charlotte, and his Summer 2026 internship search. What would you like to know? You can also email him directly at soumyanilain@gmail.com.";
+  return "I have info on Soumyanil's experience at PwC, his projects (MotionLCM, MatchTARA, Netflix Viewing Behavior, Tableau Portfolio), tech stack, education at UNC Charlotte, his Graduate Teaching Assistant role, and his 2027 New Grad and Spring 2027 Co-op search. What would you like to know? You can also email him directly at soumyanilain@gmail.com.";
 }
 
 // ----- Direct call to Anthropic API (browser → API) -----------------------
