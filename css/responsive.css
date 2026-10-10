@@ -92,6 +92,18 @@ body {
   .timeline-date { margin-bottom: 6px; }
 }
 
+/* ----- Chat button: round icon only, so it covers less text --------------- */
+@media (max-width: 720px) {
+  .chat-fab {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    justify-content: center;
+  }
+  .chat-fab > span:not(.pulse) { display: none; }
+  .chat-fab svg { width: 22px; height: 22px; }
+}
+
 /* ----- Phones ------------------------------------------------------------ */
 @media (max-width: 540px) {
   .hero {
@@ -140,12 +152,10 @@ body {
     height: 44px;
   }
 
-  /* Chat FAB shrinks */
+  /* Chat FAB tucks into the corner */
   .chat-fab {
     bottom: 20px;
     left: 20px;
-    height: 52px;
-    padding: 0 18px 0 14px;
   }
 
   /* Chat panel goes full-screen on phones */
