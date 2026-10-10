@@ -1,105 +1,111 @@
 # Soumyanil Ain — Portfolio Website
 
-Personal portfolio site styled after PwC's executive bio pages. Built as plain HTML / CSS / vanilla ES modules — no build step, no framework — so it can be hosted on any static host (GitHub Pages, Netlify, Vercel, S3, etc.) without configuration.
+**Live site:** <https://soumyanilain-portfolio.netlify.app>
+
+My personal portfolio. The layout is modeled on corporate executive bio pages: a photo-and-summary hero, then sections for my background, experience and projects. It's plain HTML, CSS and vanilla JavaScript modules with no framework and no build step. It's hosted on Netlify and redeploys automatically whenever I push to `main`.
+
+## What's on the site
+
+- **Hero:** photo, current role, location, contact, LinkedIn and GitHub
+- **About:** a short bio covering PwC, my MS at UNC Charlotte and what I'm looking for next
+- **At a glance:** areas of focus, education and certifications (AWS Cloud Practitioner, Azure Fundamentals)
+- **Experience:** a timeline, newest first, with current roles highlighted: Graduate Teaching Assistant at UNC Charlotte, MS in Computer Science, and three years at PwC Acceleration Centers
+- **Selected work:** live demo and GitHub links for each project
+  - [MotionLCM](https://huggingface.co/spaces/soumyanilain/MotionLCM): real-time text-to-motion generation (ECCV 2024), on Hugging Face Spaces
+  - [MatchTARA](https://matchtara.netlify.app/): full-stack TA/RA hiring platform (React, Node.js, PostgreSQL, Prisma)
+  - [Netflix Viewing Behavior](https://observable-prep-work.observablehq.cloud/netflix-viewing-behavior-analysis): interactive EDA dashboard (Observable, D3.js)
+  - [Tableau Portfolio](https://public.tableau.com/app/profile/soumyanil.ain/vizzes): business analytics dashboards
+- **Toolkit and contact:** tech stack and a contact section. I'm seeking 2027 New Grad and Spring 2027 Co-op roles.
+
+## Features
+
+- **Five color themes:** Forest green (default), Orange, Blue, Burgundy and Charcoal. The choice is saved in the browser.
+- **"Ask AI" chat widget:** answers common recruiter questions about my experience, projects, stack and job search
+- **Scroll extras:** a progress bar along the top, a back-to-top button, and a nav bar that hides while scrolling down
+- **Project card animations:** cards fade in as you scroll to them, and this turns off for visitors who prefer reduced motion
+- **Responsive:** works from wide desktops down to phones
+- **Search and link previews:** meta and Open Graph tags, structured data for my profile, `robots.txt` and `sitemap.xml`
+
+## Tech
+
+HTML · CSS (custom properties, grid) · JavaScript ES modules · IBM Plex fonts · Netlify
 
 ## Project structure
 
 ```
-portfolio/
-├── index.html                  Single page — semantic HTML, no logic
-├── README.md                   You are here
-│
+├── index.html                  The whole page: content, meta tags, structured data
+├── robots.txt                  Crawler rules + sitemap location
+├── sitemap.xml                 Single-page sitemap
 ├── assets/
-│   └── profile.jpg             Hero photo, also used as chat avatar & favicon
-│
-├── css/                        Loaded in dependency order from index.html
-│   ├── base.css                Design tokens, theme variants, reset, typography
-│   ├── layout.css              Page chrome: nav, hero, footer
-│   ├── components.css          Reusable: theme picker, buttons, scroll bar, back-to-top
-│   ├── sections.css            Per-section: bio, glance, experience, projects, tech, contact
-│   ├── widgets.css             AI chat widget (isolated)
-│   └── responsive.css          Media queries (loaded last so it overrides)
-│
-├── js/                         ES modules (`<script type="module">`)
-│   ├── main.js                 Entry — imports and inits each feature module
-│   ├── themePicker.js          Color theme dropdown + localStorage persistence
-│   ├── scrollFx.js             Scroll progress bar + nav hide-on-scroll
+│   └── profile.jpg             Hero photo (also the chat avatar and favicon)
+├── css/                        Loaded in this order from index.html
+│   ├── base.css                Color tokens, theme variants, reset, typography
+│   ├── layout.css              Nav, hero, footer
+│   ├── components.css          Theme picker, buttons, scroll bar, back-to-top
+│   ├── sections.css            About, glance, experience timeline, projects, toolkit, contact
+│   ├── widgets.css             AI chat widget
+│   └── responsive.css          Breakpoints (loaded last so it wins)
+├── js/
+│   ├── main.js                 Entry point, starts every feature below
+│   ├── themePicker.js          Theme dropdown + saved preference
+│   ├── scrollFx.js             Progress bar + hide-on-scroll nav
 │   ├── backToTop.js            Back-to-top button
-│   ├── projectReveal.js        IntersectionObserver-driven card entrance
+│   ├── projectReveal.js        Project card entrance animation
 │   ├── chat.js                 Chat widget controller
 │   └── chat/
-│       ├── config.js           Chat backend mode & settings
-│       ├── knowledge.js        System prompt / bio facts
-│       ├── api.js              Three response strategies (direct/proxy/fallback)
-│       └── ui.js               DOM helpers (rendering, formatting)
-│
+│       ├── config.js           Chat mode (fallback / direct / proxy)
+│       ├── knowledge.js        Facts about me that the AI uses
+│       ├── api.js              Response logic, including the keyword fallback answers
+│       └── ui.js               Message rendering helpers
 └── api/
-    └── chat-proxy.example.js   Reference serverless function for production
+    └── chat-proxy.example.js   Example serverless proxy for real AI answers
 ```
 
 ## Running locally
 
-Because the JS uses ES module imports, **opening `index.html` directly with `file://` will fail** with a CORS error and several features (theme picker, project animations, chat) will not work. Use any local static server. From inside the project directory:
+The JavaScript uses ES module imports, so double-clicking `index.html` (a `file://` URL) won't run the scripts. Serve the folder instead:
 
 ```bash
-# Python (no install needed on most systems)
-python3 -m http.server 8000
-
-# Node (if you have it)
-npx serve
-
-# Or VS Code Live Server extension
+python -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Then open <http://localhost:8000>. `npx serve` or the VS Code Live Server extension work too.
 
-> **Note:** The project gracefully degrades if JS fails — content stays visible (just without animations) — but you really do want a local server for development. Open DevTools' Console tab if anything looks broken; CORS errors are the usual cause.
+If JavaScript fails to load, all the content still shows; you just lose the animations, themes and chat.
 
-## Customizing
+## Updating the site
 
-| Want to change... | Edit |
+| To change... | Edit |
 |---|---|
-| Hero text, projects, experience, contact info | `index.html` |
-| Default theme color or add a new theme | `css/base.css` (the `:root` and `[data-theme="..."]` blocks) |
-| Bio facts the AI knows about | `js/chat/knowledge.js` |
-| Chat suggestion chips | `index.html`, search `chat-suggestion` |
-| Chat backend (fallback / direct API / proxy) | `js/chat/config.js` (`mode` field) |
+| Hero, about, experience, projects, contact | `index.html` |
+| Timeline look | `css/sections.css` (`.timeline-*`), plus the phone layout in `css/responsive.css` |
+| Theme colors or the default theme | `css/base.css` and `DEFAULT_THEME` in `js/themePicker.js` |
+| What the chat knows | `js/chat/knowledge.js` **and** the fallback answers in `js/chat/api.js` |
+| Chat quick-question buttons | `index.html`, search for `chat-suggestion` |
+| Search result / link preview text | The `<head>` of `index.html` |
 
-## AI chat — three modes
-
-The chat widget supports three backends, set in `js/chat/config.js`:
-
-### 1. `mode: 'fallback'` (default — no setup)
-Rule-based local responses. Works immediately, no network calls, no key. Covers all common recruiter questions through keyword matching against the bio.
-
-### 2. `mode: 'direct'` (local development only)
-Browser calls Anthropic API directly. Set `claudeApiKey` in `config.js`.
-
-⚠️ **Never deploy this mode publicly.** Anyone viewing the page source can copy the key and rack up charges on your account.
-
-### 3. `mode: 'proxy'` (recommended for production)
-Browser calls your own backend at `proxyEndpoint`, which holds the API key server-side.
-
-A reference implementation is provided in `api/chat-proxy.example.js`. To deploy on Vercel:
-1. Copy `api/chat-proxy.example.js` to `api/chat.js`
-2. Paste the contents of `js/chat/knowledge.js` into the `KNOWLEDGE` constant in `chat.js`
-3. Set the `ANTHROPIC_API_KEY` environment variable in your Vercel dashboard
-4. Set `mode: 'proxy'` and `proxyEndpoint: '/api/chat'` in `js/chat/config.js`
-5. Deploy
+The chat runs in fallback mode right now, so visitors see the keyword-matched answers in `api.js`. When something about me changes, update both chat files.
 
 ## Deploying
 
-This is a fully static site — drop the contents of the project folder onto:
+Netlify is connected to this repo, so every push to `main` goes live in about 30 seconds:
 
-- **Netlify Drop** — drag the folder onto <https://app.netlify.com/drop>
-- **GitHub Pages** — push to a `username.github.io` repo
-- **Vercel** — `vercel deploy` (also gives you serverless functions for the proxy)
-- **Cloudflare Pages** — `wrangler pages deploy`
-- Any static host (S3, Firebase Hosting, etc.)
+```bash
+git add .
+git commit -m "Describe the change"
+git push
+```
 
-## Browser support
+## AI chat modes
 
-- Modern Chrome, Firefox, Safari, Edge
-- Uses `IntersectionObserver`, ES modules, CSS custom properties, `:has()` not required
-- Graceful degradation: project cards reveal immediately if `IntersectionObserver` is missing; localStorage failures fall back to default theme
-- Honors `prefers-reduced-motion`
+Set `mode` in `js/chat/config.js`:
+
+- **`fallback`** (current): keyword-matched answers written in `api.js`. No API key, no network calls, no cost.
+- **`direct`**: the browser calls the Anthropic API with a key in `config.js`. For local testing only. Never deploy this, because anyone can read the key from the page source.
+- **`proxy`**: the browser calls a serverless function that keeps the API key on the server. `api/chat-proxy.example.js` shows how. Copy it to `api/chat.js`, set `ANTHROPIC_API_KEY` in the host's environment variables, and set `mode: 'proxy'`.
+
+## Contact
+
+Soumyanil Ain · [soumyanilain@gmail.com](mailto:soumyanilain@gmail.com) · [LinkedIn](https://www.linkedin.com/in/soumyanilain) · [GitHub](https://github.com/soumyanilain)
+
+© 2026 Soumyanil Ain
