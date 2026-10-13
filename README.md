@@ -11,6 +11,7 @@ My personal portfolio. The layout is modeled on corporate executive bio pages: a
 - **At a glance:** areas of focus, education and certifications (AWS Cloud Practitioner, Azure Fundamentals)
 - **Experience:** a timeline, newest first, with current roles highlighted: Graduate Teaching Assistant at UNC Charlotte, MS in Computer Science, and three years at PwC Acceleration Centers
 - **Selected work:** live demo and GitHub links for each project
+  - [Sourcebook — NotebookLM Clone](https://notebooklm-clone-wbot2pofva-uc.a.run.app): RAG app with cited answers, reports, quizzes and flashcards (Python, ChromaDB, Gradio), deployed to Google Cloud Run with GitHub Actions ([code](https://github.com/soumyanilain/notebooklm-clone))
   - [MotionLCM](https://huggingface.co/spaces/soumyanilain/MotionLCM): real-time text-to-motion generation (ECCV 2024), on Hugging Face Spaces
   - [MatchTARA](https://matchtara.netlify.app/): full-stack TA/RA hiring platform (React, Node.js, PostgreSQL, Prisma)
   - [Netflix Viewing Behavior](https://observable-prep-work.observablehq.cloud/netflix-viewing-behavior-analysis): interactive EDA dashboard (Observable, D3.js)

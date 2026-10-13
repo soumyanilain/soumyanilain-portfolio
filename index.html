@@ -34,7 +34,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "dateModified": "2026-10-09",
+  "dateModified": "2026-10-13",
   "mainEntity": {
     "@type": "Person",
     "name": "Soumyanil Ain",
@@ -207,9 +207,10 @@
             enough, observable enough, and reliable enough to run in production.
           </p>
           <p>
-            Recent work includes <strong>MotionLCM</strong>, a deployed real-time text-to-motion generation app
-            based on the ECCV 2024 paper on latent consistency distillation, and <strong>MatchTARA</strong>, a
-            full-stack hiring platform built with React, Node.js, Express, PostgreSQL, and Prisma. He holds
+            Recent work includes <strong>Sourcebook</strong>, a NotebookLM-style RAG app with cited answers,
+            deployed on Google Cloud Run through GitHub Actions; <strong>MotionLCM</strong>, a deployed real-time
+            text-to-motion generation app based on the ECCV 2024 paper on latent consistency distillation; and
+            <strong>MatchTARA</strong>, a full-stack hiring platform built with React, Node.js, Express, PostgreSQL, and Prisma. He holds
             AWS Certified Cloud Practitioner and Microsoft Certified Azure Fundamentals credentials, and
             publishes data work on Tableau Public alongside his GitHub portfolio.
           </p>
@@ -322,8 +323,38 @@
       <h2 class="section-title">Projects across machine learning, full-stack, and data visualization.</h2>
       <div class="projects-grid">
 
-        <article class="project-card">
+        <article class="project-card is-featured">
           <div class="project-num">— 01</div>
+          <h3 class="project-title">Sourcebook — NotebookLM Clone</h3>
+          <p class="project-desc">
+            Full-stack RAG app in the style of Google's NotebookLM. Add PDFs, slide decks, text files or web
+            pages to a notebook, ask questions and get answers cited down to the page or slide, and generate
+            reports, quizzes and flashcards. Uses hybrid BM25 + vector retrieval, chosen after benchmarking four
+            retrieval strategies, and deploys to Google Cloud Run through a GitHub Actions pipeline that tests,
+            builds and checks the live URL on every push.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">RAG</span>
+            <span class="project-tag">ChromaDB</span>
+            <span class="project-tag">Gradio</span>
+            <span class="project-tag">Cloud Run</span>
+            <span class="project-tag">GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a href="https://notebooklm-clone-wbot2pofva-uc.a.run.app" class="project-link" target="_blank" rel="noopener">
+              View live demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://github.com/soumyanilain/notebooklm-clone" class="project-link secondary" target="_blank" rel="noopener" aria-label="NotebookLM Clone GitHub repo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-num">— 02</div>
           <h3 class="project-title">MotionLCM</h3>
           <p class="project-desc">
             Real-time text-to-motion generation system based on the ECCV 2024 paper on latent consistency
@@ -349,7 +380,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-num">— 02</div>
+          <div class="project-num">— 03</div>
           <h3 class="project-title">MatchTARA</h3>
           <p class="project-desc">
             Full-stack TA and RA hiring platform for university departments. Includes job-board browsing,
@@ -375,7 +406,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-num">— 03</div>
+          <div class="project-num">— 04</div>
           <h3 class="project-title">Netflix Viewing Behavior</h3>
           <p class="project-desc">
             Exploratory data analysis dashboard built on Observable Framework over a roughly 50,000-record
@@ -400,7 +431,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-num">— 04</div>
+          <div class="project-num">— 05</div>
           <h3 class="project-title">Tableau Portfolio</h3>
           <p class="project-desc">
             Public Tableau workbook collection covering business analytics dashboards, KPI reporting, and

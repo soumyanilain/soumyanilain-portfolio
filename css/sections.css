@@ -210,6 +210,11 @@ body.js-ready .project-card.is-visible {
 .project-card:nth-child(2) { transition-delay: 0.15s; }
 .project-card:nth-child(3) { transition-delay: 0.25s; }
 .project-card:nth-child(4) { transition-delay: 0.35s; }
+.project-card:nth-child(5) { transition-delay: 0.45s; }
+
+/* Newest project gets the full row */
+.project-card.is-featured { grid-column: 1 / -1; }
+.project-card.is-featured .project-desc { max-width: 860px; }
 
 .project-card::before {
   content: '';

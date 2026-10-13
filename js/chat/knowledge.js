@@ -29,10 +29,11 @@ EXPERIENCE
 - MS in Computer Science student at UNC Charlotte (August 2025 – present).
 
 PROJECTS
-1. MotionLCM — Real-time text-to-motion generation app implementing the ECCV 2024 paper on latent consistency distillation. Deployed publicly on Hugging Face Spaces with a Gradio interface, custom example prompts, architecture diagram, and benchmarking against the base diffusion model. Built with PyTorch, Gradio, and runs on a CPU Basic free tier.
-2. MatchTARA — Full-stack TA/RA hiring platform for university departments. Includes job board, position creation for faculty, student application submission, and authentication. React + Node.js/Express + PostgreSQL + Prisma in a monorepo. Repo: github.com/soumyanilain/MatchTARA
-3. Netflix Viewing Behavior Analysis — Observable Framework EDA dashboard over a ~50,000-record Netflix dataset, with interactive visualizations of genre trends, watch-time patterns, and country-level differences.
-4. Tableau Portfolio — Public Tableau workbook collection covering business analytics dashboards, KPI reporting, and exploratory studies.
+1. Sourcebook (NotebookLM Clone) — Full-stack RAG app in the style of Google's NotebookLM. Users create notebooks, add PDFs (cited by page), PPTX slide decks (cited by slide), text files and web pages, ask questions and get answers with citations, and generate reports, quizzes with answer keys, and flashcards. Hybrid BM25 + vector retrieval (ChromaDB, fastembed) chosen after evaluating four retrieval strategies (vector, hybrid, cross-encoder rerank, hybrid + rerank) on Hit@k, MRR, latency and LLM-judged correctness. Python, Gradio, Groq LLMs. Deployed on Google Cloud Run via a GitHub Actions CI/CD pipeline (tests, Docker build, deploy, live-URL check) using Workload Identity Federation. Live: notebooklm-clone-wbot2pofva-uc.a.run.app · Repo: github.com/soumyanilain/notebooklm-clone
+2. MotionLCM — Real-time text-to-motion generation app implementing the ECCV 2024 paper on latent consistency distillation. Deployed publicly on Hugging Face Spaces with a Gradio interface, custom example prompts, architecture diagram, and benchmarking against the base diffusion model. Built with PyTorch, Gradio, and runs on a CPU Basic free tier.
+3. MatchTARA — Full-stack TA/RA hiring platform for university departments. Includes job board, position creation for faculty, student application submission, and authentication. React + Node.js/Express + PostgreSQL + Prisma in a monorepo. Repo: github.com/soumyanilain/MatchTARA
+4. Netflix Viewing Behavior Analysis — Observable Framework EDA dashboard over a ~50,000-record Netflix dataset, with interactive visualizations of genre trends, watch-time patterns, and country-level differences.
+5. Tableau Portfolio — Public Tableau workbook collection covering business analytics dashboards, KPI reporting, and exploratory studies.
 
 TECH STACK
 - Languages: Java, JavaScript/TypeScript, Python, SQL

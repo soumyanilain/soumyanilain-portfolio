@@ -21,6 +21,9 @@ function localFallback(question) {
   if (/pwc|experience|work|job/.test(q)) {
     return "Soumyanil worked at **PwC Acceleration Centers** for three years (Aug 2022 – Aug 2025) as a Software Development Engineer. He built enterprise full-stack features in Java, Spring Boot, and React, integrated with AWS and Azure, and contributed to data pipelines processing millions of records. He started as an intern in summer 2022 and converted to a return offer. Since September 2026 he's also been a Graduate Teaching Assistant at UNC Charlotte for ITIS 3300: Software Requirements, Analysis & Testing.";
   }
+  if (/notebooklm|notebook|sourcebook|\brag\b|retrieval|cloud run/.test(q)) {
+    return "**Sourcebook** is his NotebookLM-style RAG app. You add PDFs, slide decks, text files or web pages to a notebook, ask questions and get answers cited down to the page or slide, and generate reports, quizzes and flashcards. It uses hybrid BM25 + vector retrieval (picked after benchmarking four retrieval strategies) and deploys to Google Cloud Run through a GitHub Actions CI/CD pipeline. Try it at https://notebooklm-clone-wbot2pofva-uc.a.run.app (the first load can take ~20 seconds while it wakes up).";
+  }
   if (/motionlcm|motion/.test(q)) {
     return "**MotionLCM** is a real-time text-to-motion generation app he built based on the ECCV 2024 paper on latent consistency distillation. It's deployed publicly on Hugging Face Spaces with a Gradio interface, custom example prompts, an architecture diagram, and benchmarking against the base diffusion model. Try it at huggingface.co/spaces/soumyanilain/MotionLCM";
   }
@@ -40,12 +43,12 @@ function localFallback(question) {
     return "Reach Soumyanil at **soumyanilain@gmail.com** or +1 (980) 406-2716. He's also on LinkedIn (linkedin.com/in/soumyanilain) and GitHub (github.com/soumyanilain).";
   }
   if (/project|portfolio|build/.test(q)) {
-    return "His featured projects are:\n\n1. **MotionLCM** — real-time text-to-motion (PyTorch, Gradio, deployed on HF Spaces)\n2. **MatchTARA** — TA/RA hiring platform (React, Node, Postgres, Prisma)\n3. **Netflix Viewing Behavior** — Observable Framework EDA dashboard\n4. **Tableau Portfolio** — public dashboards for business analytics\n\nScroll up to the Selected Work section for details and links.";
+    return "His featured projects are:\n\n1. **Sourcebook** — NotebookLM-style RAG app with cited answers (Python, ChromaDB, Cloud Run)\n2. **MotionLCM** — real-time text-to-motion (PyTorch, Gradio, deployed on HF Spaces)\n3. **MatchTARA** — TA/RA hiring platform (React, Node, Postgres, Prisma)\n4. **Netflix Viewing Behavior** — Observable Framework EDA dashboard\n5. **Tableau Portfolio** — public dashboards for business analytics\n\nScroll up to the Selected Work section for details and links.";
   }
   if (/^(hi|hello|hey)/.test(q)) {
     return "Hi there! Ask me anything about Soumyanil's experience, projects, tech stack, or what he's looking for next.";
   }
-  return "I have info on Soumyanil's experience at PwC, his projects (MotionLCM, MatchTARA, Netflix Viewing Behavior, Tableau Portfolio), tech stack, education at UNC Charlotte, his Graduate Teaching Assistant role, and his 2027 New Grad and Spring 2027 Co-op search. What would you like to know? You can also email him directly at soumyanilain@gmail.com.";
+  return "I have info on Soumyanil's experience at PwC, his projects (Sourcebook, MotionLCM, MatchTARA, Netflix Viewing Behavior, Tableau Portfolio), tech stack, education at UNC Charlotte, his Graduate Teaching Assistant role, and his 2027 New Grad and Spring 2027 Co-op search. What would you like to know? You can also email him directly at soumyanilain@gmail.com.";
 }
 
 // ----- Direct call to Anthropic API (browser → API) -----------------------
