@@ -223,7 +223,8 @@
 footer {
   background: var(--footer);
   color: var(--footer-text);
-  padding: 64px 32px 32px;
+  /* Extra bottom space so the floating "Ask AI" button (bottom-left) never covers the last footer row */
+  padding: 64px 32px 112px;
 }
 .footer-inner {
   max-width: 1280px;
