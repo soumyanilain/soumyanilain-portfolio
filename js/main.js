@@ -12,6 +12,7 @@ import { initScrollFx } from './scrollFx.js';
 import { initBackToTop } from './backToTop.js';
 import { initProjectReveal } from './projectReveal.js';
 import { initChat } from './chat.js';
+import { initFooterUpdated } from './footerUpdated.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Signal to CSS that JS loaded successfully. The reveal-on-scroll animation
@@ -24,4 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initProjectReveal();
   initChat();
+  initFooterUpdated();
 });

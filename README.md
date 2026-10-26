@@ -25,6 +25,7 @@ My personal portfolio. The layout is modeled on corporate executive bio pages: a
 - **Scroll extras:** a progress bar along the top, a back-to-top button, and a nav bar that hides while scrolling down
 - **Project card animations:** cards fade in as you scroll to them, and this turns off for visitors who prefer reduced motion
 - **Responsive:** works from wide desktops down to phones
+- **"Page updated" date:** a small info button in the footer; click it to see when the site was last published. The date is stamped automatically on every deploy.
 - **Search and link previews:** meta and Open Graph tags, structured data for my profile, `robots.txt` and `sitemap.xml`
 
 ## Tech
@@ -37,6 +38,9 @@ HTML · CSS (custom properties, grid) · JavaScript ES modules · IBM Plex fonts
 ├── index.html                  The whole page: content, meta tags, structured data
 ├── robots.txt                  Crawler rules + sitemap location
 ├── sitemap.xml                 Single-page sitemap
+├── netlify.toml                Netlify settings: publish folder + the date-stamp build step
+├── scripts/
+│   └── stamp-updated-date.sh   Writes the deploy date into the page, structured data and sitemap
 ├── assets/
 │   └── profile.jpg             Hero photo (also the chat avatar and favicon)
 ├── css/                        Loaded in this order from index.html
@@ -52,6 +56,7 @@ HTML · CSS (custom properties, grid) · JavaScript ES modules · IBM Plex fonts
 │   ├── scrollFx.js             Progress bar + hide-on-scroll nav
 │   ├── backToTop.js            Back-to-top button
 │   ├── projectReveal.js        Project card entrance animation
+│   ├── footerUpdated.js        Footer info button that reveals the "Page updated" date
 │   ├── chat.js                 Chat widget controller
 │   └── chat/
 │       ├── config.js           Chat mode (fallback / direct / proxy)
@@ -89,7 +94,7 @@ The chat runs in fallback mode right now, so visitors see the keyword-matched an
 
 ## Deploying
 
-Netlify is connected to this repo, so every push to `main` goes live in about 30 seconds:
+Netlify is connected to this repo, so every push to `main` goes live in about 30 seconds. The only build step is `scripts/stamp-updated-date.sh`, which sets the "Page updated" date, the structured-data `dateModified` and the sitemap `<lastmod>` to the deploy date (US Eastern). You never need to edit those dates by hand:
 
 ```bash
 git add .

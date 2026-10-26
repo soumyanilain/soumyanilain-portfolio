@@ -274,6 +274,60 @@ footer {
   gap: 16px;
   font-size: 12px;
 }
+.footer-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+/* "Page updated": a gray info button that slides the date out when clicked */
+.footer-updated {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  min-width: 34px;
+  padding: 0 8px;
+  border: 1px solid #5A5A5A;
+  border-radius: 10px;
+  background: #707070;
+  color: #F2F2F2;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.footer-updated:hover { background: #7E7E7E; }
+.footer-updated:focus-visible {
+  outline: 2px solid var(--pwc-yellow);
+  outline-offset: 2px;
+}
+.footer-updated svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.footer-updated-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 220px;
+  padding: 0 4px 0 8px;
+}
+/* Collapsed until clicked (only once JS has loaded, so the date still shows without JS) */
+body.js-ready .footer-updated-text {
+  max-width: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-width 0.3s ease, padding 0.3s ease, opacity 0.2s ease, visibility 0.3s;
+}
+body.js-ready .footer-updated[aria-expanded="true"] .footer-updated-text {
+  max-width: 220px;
+  padding: 0 4px 0 8px;
+  opacity: 1;
+  visibility: visible;
+}
 .footer-social { display: flex; gap: 12px; }
 .footer-social a {
   width: 36px;

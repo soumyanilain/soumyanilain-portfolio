@@ -1,0 +1,2 @@
+# Keep shell scripts on LF line endings so they run on Netlify and in Git Bash
+*.sh text eol=lf

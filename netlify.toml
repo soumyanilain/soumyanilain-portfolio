@@ -1,0 +1,6 @@
+# Netlify deploy settings (these override the ones in the Netlify dashboard).
+# The site is plain static files; the only build step stamps the
+# "Page updated" date. See scripts/stamp-updated-date.sh.
+[build]
+  publish = "."
+  command = "bash scripts/stamp-updated-date.sh"

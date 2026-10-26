@@ -34,7 +34,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  "dateModified": "2026-10-13",
+  "dateModified": "2026-10-26",
   "mainEntity": {
     "@type": "Person",
     "name": "Soumyanil Ain",
@@ -562,7 +562,11 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div>© 2026 Soumyanil Ain. All rights reserved.</div>
+        <div class="footer-meta">
+          <!-- Info button: click to show the date. The date is re-stamped on every Netlify deploy by scripts/stamp-updated-date.sh -->
+          <button type="button" class="footer-updated" id="footerUpdated" aria-expanded="false" aria-controls="footerUpdatedText" aria-label="Show when this page was last updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="11"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span class="footer-updated-text" id="footerUpdatedText">Page updated <time class="page-updated-date" datetime="2026-10-26">Oct 26, 2026</time></span></button>
+          <span>© 2026 Soumyanil Ain. All rights reserved.</span>
+        </div>
         <div class="footer-social">
           <a href="https://github.com/soumyanilain" aria-label="GitHub" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
